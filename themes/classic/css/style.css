@@ -1,0 +1,39 @@
+body{
+	background: url("../img/wallpaper.jpg");
+}
+
+/*Extender la clase nav-bar*/
+.nav>li>a{
+
+}
+
+.inner-content{
+	margin-left: 75%;
+	width: 95%;
+	border:  1px solid black;
+	overflow-y:scroll;
+	display: inline-block;
+	min-height: 400px;
+}
+
+#page{
+	margin: 10% auto;
+	min-height:500px;
+}
+
+.loginArea{
+	display: inline-block;
+	background: #CCFF99;
+	padding: 3em 3em;
+	margin: 10% 35%;
+	box-shadow: 10px 10px 10px;
+}
+
+.loginArea .btn-default{
+	margin: 1em 6em;
+}
+
+.form .loginArea > .row > input,
+.form .loginArea > .row > label{
+	margin-left: 5em;
+}	
