@@ -120,8 +120,6 @@ class PrincipalController extends Controller
 	}
 
 
-	//just testing
-
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
