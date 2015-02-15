@@ -12,7 +12,7 @@
         <dt class="accordion__title">Almacen</dt>
         <dd class="accordion__content">
         	<div class="inner-content">
-        	<?php $this->renderPartial('tabs/almacen'); ?>
+        	<?php $this->renderPartial('tabs/producto'); ?>
 			</div>
 	</dd>
 

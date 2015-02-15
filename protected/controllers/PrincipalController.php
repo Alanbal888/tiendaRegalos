@@ -127,4 +127,28 @@ class PrincipalController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	/**
+		*Crear producto
+	**/
+
+	//EJEMPLO
+
+	public function actionCrearProducto()
+	{
+		$model = new Modelo;
+
+		if(isset($_POST['Modelo']))
+		{
+			$model->attributes = $_POST['Modelo'];
+
+			if($model->save())
+			{
+				$this->redirect('principal/inicio',array('tab'=>'tab_proveniente'));
+			}
+		}
+
+		$this->render('crea_modelo',array('model'=>$model));
+	}
+
 }
