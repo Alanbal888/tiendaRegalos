@@ -119,6 +119,9 @@ class PrincipalController extends Controller
 		$this->render('crea_usuario',array('model'=>$model));	
 	}
 
+
+	//just testing
+
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
