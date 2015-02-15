@@ -192,33 +192,5 @@ class ProductoController extends Controller
 			Yii::app()->end();
 		}
 	}
-	/**
-	 * Lists all models.
-	 */
-	/*public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Producto');
-		$this->render('inicio',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}*/
-	/*
-	public $layout='//layouts/tabs/producto';
-
-	public function actionIndex()
-	{
-		$product = Producto::model()->findAll();	
-		$this->render('tabs/producto', array('product'=>$product	));
-	}*/
 	
-
-	//Consulta de producto
-	/*public public function actionConsultarProducto($id)
-	{
-		$productConsulta = Producto::model()->find('id_producto=:id_producto',	array(':id_producto'=>$id) );
-		)
-		$this->renderPartial('producto',array('productConsulta'=>$productConsulta)
-			);
-	}
-*/
 }
