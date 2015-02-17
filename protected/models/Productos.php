@@ -13,14 +13,14 @@
  * The followings are the available model relations:
  * @property Venta[] $ventas
  */
-class Producto extends CActiveRecord
+class Productos extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'producto';
+		return 'productos';
 	}
 
 	/**
@@ -107,4 +107,6 @@ class Producto extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	
 }
