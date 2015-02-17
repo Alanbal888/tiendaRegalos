@@ -1,6 +1,6 @@
 <?php
 
-class ProductoController extends Controller
+class ProductosController extends Controller
 {
 
 	/**
@@ -129,13 +129,25 @@ class ProductoController extends Controller
 		));
 	}*/
 	
-	
+	/*
 	public function actionIndex()
 	{
 		$products = Producto::model()->findAll();	
 		$this->render('almacen',array(
 			'products'=>$products,
 		));
+	}
+	*/
+
+	public function actionIndex() {
+	 $products=new CActiveDataProvider('Producto',array(
+	   'pagination'=>array(
+	     'pageSize'=>4,
+	    ),
+	 ));
+	 $this->renderPartial('tabs/productos/productos',array(
+	     'products'=>$products,
+	  ));
 	}
 	
 

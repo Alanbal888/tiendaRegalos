@@ -1,26 +1,15 @@
 <?php
 
-/**
- * This is the model class for table "producto".
- *
- * The followings are the available columns in table 'producto':
- * @property integer $id_producto
- * @property string $nombre_p
- * @property string $categoria
- * @property string $precio_unitario
- * @property integer $unidades_existencia
- *
- * The followings are the available model relations:
- * @property Venta[] $ventas
- */
-class Productos extends CActiveRecord
+
+class Producto extends CActiveRecord
 {
+	
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'productos';
+		return 'producto';
 	}
 
 	/**

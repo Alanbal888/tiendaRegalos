@@ -1,6 +1,13 @@
 <div id="tabs">
 <dl class="accordion">
+<?php 
+$products=new CActiveDataProvider('Producto',array(
+           'pagination'=>array(
+             'pageSize'=>4,
+            ),
+         ));
 
+        ?>
         <!--Sección de Percepciones-->
         <dt class="accordion__title">Usuarios</dt>
         <dd class="accordion__content">
@@ -12,7 +19,9 @@
         <dt class="accordion__title">Almacen</dt>
         <dd class="accordion__content">
         	<div class="inner-content">
-        	<?php $this->renderPartial('tabs/productos/productos'); ?>
+        	<?php $this->renderPartial('tabs/productos/productos',array(
+             'products'=>$products,
+          )); ?>
 			</div>
 	</dd>
 
