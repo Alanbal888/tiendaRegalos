@@ -28,29 +28,31 @@
 	Yii::app()->clientScript->registerCoreScript('jquery');
 ?>
 
-<div class="container" id="page">
-	<div id="mainmenu">
 
-		<div class="navbar navbar-default">
-                <div class="navbar-collapse collapse navbar-responsive-collapse">
-                  <ul class="nav navbar-nav">
-					<?php $this->widget('zii.widgets.CMenu',array(
-						'items'=>array(
+
+<nav class="navigation" id="page">
+	<ul>
+		<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
 							array('label'=>'Inicio', 'url'=>array('')),
+							array('label'=>'Almacen', 'url'=>array('/producto/producto')),
+							array('label'=>'Usuario', 'url'=>array('/usuarios/usuarios')),
+							array('label'=>'Apartados', 'url'=>array('/apartados/apartados')),
+							array('label'=>'Reportes', 'url'=>array('/reportes/reportes')),
+							array('label'=>'Clientes', 'url'=>array('/clientes/index')),
 							array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/principal/logout'), 'visible'=>!Yii::app()->user->isGuest)
-						),
-						'htmlOptions'=>array("class"=>"nav navbar-nav",)
-					)); ?>
-						 </ul>
-	                  <div class="navbar-collapse collapse">
-		                  <ul class="nav navbar-nav" style="float:right">
-		                  	<li><i class="glyphicon glyphicon-record" style="margin:15px 10px 0 10px"></i><span style="margin-top:-10px; position:relative;"><?php echo Yii::app()->user->name; ?></span></li>
-		                  </ul>	
-	                  </div>	
-                </div>
-        </div>
+			),
+			'htmlOptions'=>array("class"=>"nav navbar-nav",)
+			)); ?>
+	</ul>
+	                 
+	<ul style="float:right">
+		                  <li><i class="glyphicon glyphicon-record" style="margin:15px 10px 0 10px"></i><span style="margin-top:-10px; position:relative;"><?php echo Yii::app()->user->name; ?></span></li>
+	</ul>	
+	               
 
-	</div><!-- mainmenu -->
+
+	</nav><!-- mainmenu -->
 
 	<?php echo $content; ?>
 
