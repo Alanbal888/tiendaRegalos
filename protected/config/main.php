@@ -10,7 +10,7 @@ return array(
 	'name'=>'Tienda de Regalos',
 	'theme'=>'classic',
 	'language' => 'es',
-	 'defaultController' => 'principal/login',
+	'defaultController' => 'principal/login',
 
 	// preloading 'log' component
 	//'preload'=>array('log'),

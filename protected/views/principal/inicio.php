@@ -19,9 +19,7 @@ $products=new CActiveDataProvider('Producto',array(
         <dt class="accordion__title">Almacen</dt>
         <dd class="accordion__content">
         	<div class="inner-content">
-        	<?php $this->renderPartial('tabs/productos/productos',array(
-             'products'=>$products,
-          )); ?>
+        	<?php $this->renderPartial('tabs/productos'); ?>
 			</div>
 	</dd>
 
