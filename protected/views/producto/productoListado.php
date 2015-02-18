@@ -1,6 +1,6 @@
 <H1>Lista de Productos</H1>
 <?php
-/*
+
  $this->widget('zii.widgets.grid.CGridView', array(
   'dataProvider'=>$products,
   'columns'=>array(
@@ -12,5 +12,5 @@
     ),
   ),
  ));
- */
+ 
 ?>

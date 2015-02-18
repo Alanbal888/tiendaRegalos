@@ -82,7 +82,6 @@ class PrincipalController extends Controller
 	}
 
 
-
 	/**
 		*Crear usuario
 	**/
@@ -124,7 +123,6 @@ class PrincipalController extends Controller
 
 		$this->render('crea_usuario',array('model'=>$model));	
 	}
-<<<<<<< HEAD
 
 
 	/**
@@ -135,30 +133,4 @@ class PrincipalController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-
-	/**
-		*Crear producto
-	**/
-
-	//EJEMPLO
-
-	public function actionCrearProducto()
-	{
-		$model = new Modelo;
-
-		if(isset($_POST['Modelo']))
-		{
-			$model->attributes = $_POST['Modelo'];
-
-			if($model->save())
-			{
-				$this->redirect('principal/inicio',array('tab'=>'tab_proveniente'));
-			}
-		}
-
-		$this->render('crea_modelo',array('model'=>$model));
-	}
-
-=======
->>>>>>> parent of 0b678b3... Revert "Revert "Testing""
 }

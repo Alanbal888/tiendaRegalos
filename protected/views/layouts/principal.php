@@ -28,31 +28,20 @@
 	Yii::app()->clientScript->registerCoreScript('jquery');
 ?>
 
-<div class="container" id="page">
-	<div id="mainmenu">
 
-		<div class="navbar navbar-default">
-                <div class="navbar-collapse collapse navbar-responsive-collapse">
-                  <ul class="nav navbar-nav">
-					<?php $this->widget('zii.widgets.CMenu',array(
-						'items'=>array(
-							array('label'=>'Inicio', 'url'=>array('')),
-							array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/principal/logout'), 'visible'=>!Yii::app()->user->isGuest)
-						),
-						'htmlOptions'=>array("class"=>"nav navbar-nav",)
-					)); ?>
-						 </ul>
-	                  <div class="navbar-collapse collapse">
-		                  <ul class="nav navbar-nav" style="float:right">
-		                  	<li><i class="glyphicon glyphicon-record" style="margin:15px 10px 0 10px"></i><span style="margin-top:-10px; position:relative;"><?php echo Yii::app()->user->name; ?></span></li>
-		                  </ul>	
-	                  </div>	
-                </div>
-        </div>
+<div id="navigation">
+   <ul>
+     <li><a href="">Ventas</a></li>
+     <li><a href="?r=producto">Almacen</a></li>
+     <li><a href="?r=usuarios">Usuario</a></li>
+     <li><a href="?r=apartados">Apartados</a></li>
+     <li><a href="?r=reportes">Reportes</a></li>
+     <li><a href="?r=clientes">Clientes</a></li>
+     <li><a href="?r=principal/logout">Salir</a></li>
+     <li><span>Usuario: <?php echo Yii::app()->user->name; ?></span></li>
+   </ul>
+ </div>
 
-	</div><!-- mainmenu -->
-
-	<?php echo $content; ?>
 
 	<div class="clear"></div>
 </div><!-- page -->

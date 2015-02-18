@@ -8,11 +8,8 @@ $products=new CActiveDataProvider('Producto',array(
              'pageSize'=>4,
             ),
          ));
-
-<<<<<<< HEAD
         ?>
         <!--Sección de Percepciones-->
-=======
         <dt class="accordion__title">Ventas</dt>
         <dd class="accordion__content">
                 <div class="inner-content">
@@ -20,7 +17,6 @@ $products=new CActiveDataProvider('Producto',array(
                 </div>
         </dd>
 
->>>>>>> parent of 0b678b3... Revert "Revert "Testing""
         <dt class="accordion__title">Usuarios</dt>
         <dd class="accordion__content">
         	<div class="inner-content">
@@ -51,4 +47,4 @@ $products=new CActiveDataProvider('Producto',array(
 </dl>
 </div>
 
-
+    <h2>Inicio</h2>
