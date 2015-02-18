@@ -52,9 +52,11 @@ return array(
 		),
 		
 		// uncomment the following to use a MySQL database
-		
+		/*Por favor Gary y Kike importen la base de datos de tienda_regalos que está en el drop a su phpMyAdmin para 
+		que les corra el modelo de Usuarios que vamos a crear*/
+
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=punto_venta',
+			'connectionString' => 'mysql:host=localhost;dbname=tienda_regalos',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
