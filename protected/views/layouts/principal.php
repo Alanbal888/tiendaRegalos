@@ -30,17 +30,17 @@
 
 
 <div id="navigation">
-   <ul>
-     <li><a href="">Ventas</a></li>
-     <li><a href="?r=producto">Almacen</a></li>
-     <li><a href="?r=usuarios">Usuario</a></li>
-     <li><a href="?r=apartados">Apartados</a></li>
-     <li><a href="?r=reportes">Reportes</a></li>
-     <li><a href="?r=clientes">Clientes</a></li>
-     <li><a href="?r=principal/logout">Salir</a></li>
-     <li><span>Usuario: <?php echo Yii::app()->user->name; ?></span></li>
-   </ul>
+   		<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Ventas', 'url'=>array('/principal/inicio')),
+				array('label'=>'Almacen', 'url'=>array('/almacen/index')),
+				array('label'=>'Usuarios', 'url'=>array('/usuarios/index')),
+				array('label'=>'Clientes', 'url'=>array('/clientes/index')),
+				array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/principal/logout'))
+			),
+		)); ?>
  </div>
+
 
 
 	<div class="clear"></div>
