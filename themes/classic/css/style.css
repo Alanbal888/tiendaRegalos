@@ -7,15 +7,6 @@ body{
 
 }
 
-.inner-content{
-	margin-left: 75%;
-	width: 95%;
-	border:  1px solid black;
-	overflow-y:scroll;
-	display: inline-block;
-	min-height: 400px;
-}
-
 #page{
 	margin: 10% auto;
 	min-height:500px;
@@ -37,3 +28,43 @@ body{
 .form .loginArea > .row > label{
 	margin-left: 5em;
 }	
+
+
+.titulo{
+	margin: 5% 14%;
+
+}
+
+.content{
+	background: white;
+	box-shadow: 10px 10px 10px;
+	min-height: 400px;
+	max-width: 960px;
+	margin: 4% auto;
+}
+
+#busqueda-almacen-sec{
+	display: inline-block;
+	position: relative;
+	margin: 4% 5%;
+	width: 95%;
+}
+
+#busqueda-almacen-sec label{
+	margin-right: 4%;
+}
+#busqueda-almacen-sec input{
+	
+	width: 25%;
+}
+
+#venta-productos-sec{
+	width: 95%;
+}
+
+#venta-productos-sec > table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+t
+
