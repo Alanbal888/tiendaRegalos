@@ -77,8 +77,6 @@ class PrincipalController extends Controller
 		$this->render('inicio');
 	}
 
-
-
 	/**
 		*Crear usuario
 	**/
@@ -119,5 +117,15 @@ class PrincipalController extends Controller
 		}
 
 		$this->render('crea_usuario',array('model'=>$model));	
+	}
+
+
+	/**
+	 * Logs out the current user and redirect to homepage.
+	 */
+	public function actionLogout()
+	{
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
 	}
 }
