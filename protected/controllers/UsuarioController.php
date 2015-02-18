@@ -1,6 +1,6 @@
 <?php
 
-class PrincipalController extends Controller
+class UsuarioController extends Controller
 {
 
 
@@ -74,10 +74,9 @@ class PrincipalController extends Controller
 	public function actionInicio()
 	{
 		$this->layout = 'principal';
+
 		$this->render('inicio');
 	}
-
-
 
 	/**
 		*Crear usuario

@@ -1,7 +1,15 @@
+<input id="tab_actual" type="text">
+
 <div id="tabs">
 <dl class="accordion">
 
-        <!--Sección de Percepciones-->
+        <dt class="accordion__title">Ventas</dt>
+        <dd class="accordion__content">
+                <div class="inner-content">
+                <?php $this->renderPartial('tabs/ventas'); ?>
+                </div>
+        </dd>
+
         <dt class="accordion__title">Usuarios</dt>
         <dd class="accordion__content">
         	<div class="inner-content">
@@ -31,3 +39,5 @@
 		</dd>         
 </dl>
 </div>
+
+
