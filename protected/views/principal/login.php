@@ -7,6 +7,8 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
 	'Login',
 );
+
+
 ?>
 
 
@@ -19,7 +21,7 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Los campos con<span class="required">*</span> son requeridos</p>
+	<p class="note">Los campos con <span class="required">*</span> son requeridos</p>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>

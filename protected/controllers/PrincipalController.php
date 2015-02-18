@@ -47,6 +47,7 @@ class PrincipalController extends Controller
 	{
 		$model=new LoginForm;
 
+	
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
@@ -59,8 +60,11 @@ class PrincipalController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(array('principal/inicio'));
+			if($model->validate() && $model->login()){
+				
+				$this->redirect(array('principal/inicio') );
+				//$this->render('inicio',array( 'products'=>$products));
+			}
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
@@ -83,9 +87,9 @@ class PrincipalController extends Controller
 
 	//EJEMPLO
 
-	public function actionCreaModelo()
+	public function actionProductos()
 	{
-		$model = new Modelo;
+		$model = new Producto;
 
 		if(isset($_POST['Modelo']))
 		{
@@ -128,4 +132,28 @@ class PrincipalController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	/**
+		*Crear producto
+	**/
+
+	//EJEMPLO
+
+	public function actionCrearProducto()
+	{
+		$model = new Modelo;
+
+		if(isset($_POST['Modelo']))
+		{
+			$model->attributes = $_POST['Modelo'];
+
+			if($model->save())
+			{
+				$this->redirect('principal/inicio',array('tab'=>'tab_proveniente'));
+			}
+		}
+
+		$this->render('crea_modelo',array('model'=>$model));
+	}
+
 }

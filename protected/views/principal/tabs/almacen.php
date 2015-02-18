@@ -1,2 +1,0 @@
-<H1>ALMACEN SPACE
-algo mas</H1>
