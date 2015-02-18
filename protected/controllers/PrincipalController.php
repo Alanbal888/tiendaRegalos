@@ -62,7 +62,7 @@ class PrincipalController extends Controller
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login()){
 				
-				$this->redirect(array('principal/inicio') );
+				$this->redirect(array('venta/index') );
 				//$this->render('inicio',array( 'products'=>$products));
 			}
 		}
@@ -71,15 +71,6 @@ class PrincipalController extends Controller
 	}
 
 
-	/**
-		*Ventana de inicio
-	**/
-
-	public function actionInicio()
-	{
-		$this->layout = 'principal';
-		$this->render('inicio');
-	}
 
 
 	/**

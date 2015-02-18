@@ -46,6 +46,9 @@
 	<div class="clear"></div>
 </div><!-- page -->
 
+<?php  echo $content; ?>
+
+
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/js/tabs.js"></script>
 
 
