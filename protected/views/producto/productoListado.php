@@ -1,12 +1,16 @@
+<H1>Lista de Productos</H1>
 <?php
+
  $this->widget('zii.widgets.grid.CGridView', array(
-  'dataProvider'=>$profs,
+  'dataProvider'=>$products,
   'columns'=>array(
-    'idProfesor:number:Id',
-    'cedProfesor:text:Cédula',
-    'nomProf:text:Nombre',
-    'tituloProf:text:Título',
+    'id_producto:number:Id',
+    'nombre_p:text:Producto',
+    'precio_unitario:text:Precio',
+    'unidades_existencia:number:Stock',
     array('class'=>'CButtonColumn','header'=>'Operaciones'
     ),
   ),
  ));
+ 
+?>

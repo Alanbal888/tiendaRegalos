@@ -1,13 +1,13 @@
 <?php
 
-class ProductosController extends Controller
+class ProductoController extends Controller
 {
 
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/principal';
 
 	/**
 	 * @return array action filters
@@ -121,46 +121,20 @@ class ProductosController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	/*public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Producto');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}*/
-	
-	/*
 	public function actionIndex()
 	{
-		$products = Producto::model()->findAll();	
-		$this->render('almacen',array(
+		$products=new CActiveDataProvider('Producto',array(
+	   		'pagination'=>array(
+	     	'pageSize'=>4, ),
+	     	)
+	 	);
+		$this->render('productoListado',array(
 			'products'=>$products,
 		));
-	}
-	*/
-
-	public function actionIndex() {
-	 $products=new CActiveDataProvider('Producto',array(
-	   'pagination'=>array(
-	     'pageSize'=>4,
-	    ),
-	 ));
-	 $this->renderPartial('tabs/productos/productos',array(
-	     'products'=>$products,
-	  ));
 	}
 	
 
 	//Consulta de producto
-	public public function actionConsultarProducto($id)
-	{
-		$products = Producto::model()->find('id_producto=:id_producto',
-										array(':id_producto'=>$id) );
-		)
-		$this->renderPartial('almacen',array(
-			'products'=>$products,
-		));
-	}
 
 	/**
 	 * Manages all models.
