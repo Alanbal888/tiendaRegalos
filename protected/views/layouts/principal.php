@@ -45,7 +45,10 @@
 
 	<div class="clear"></div>
 </div><!-- page -->
-
+<div id="content-container">
+   <div id="content">
+     <?php echo $content; ?>
+   </div>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/js/tabs.js"></script>
 
 
