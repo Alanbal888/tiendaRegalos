@@ -1,6 +1,6 @@
 <?php
 
-class PrincipalController extends Controller
+class UsuarioController extends Controller
 {
 
 
@@ -47,7 +47,6 @@ class PrincipalController extends Controller
 	{
 		$model=new LoginForm;
 
-	
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
@@ -60,11 +59,8 @@ class PrincipalController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login()){
-				
-				$this->redirect(array('principal/inicio') );
-				//$this->render('inicio',array( 'products'=>$products));
-			}
+			if($model->validate() && $model->login())
+				$this->redirect(array('principal/inicio'));
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
@@ -78,10 +74,9 @@ class PrincipalController extends Controller
 	public function actionInicio()
 	{
 		$this->layout = 'principal';
+
 		$this->render('inicio');
 	}
-
-
 
 	/**
 		*Crear usuario
@@ -89,9 +84,9 @@ class PrincipalController extends Controller
 
 	//EJEMPLO
 
-	public function actionProductos()
+	public function actionCreaModelo()
 	{
-		$model = new Producto;
+		$model = new Modelo;
 
 		if(isset($_POST['Modelo']))
 		{
@@ -124,41 +119,4 @@ class PrincipalController extends Controller
 
 		$this->render('crea_usuario',array('model'=>$model));	
 	}
-<<<<<<< HEAD
-
-
-	/**
-	 * Logs out the current user and redirect to homepage.
-	 */
-	public function actionLogout()
-	{
-		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
-	}
-
-	/**
-		*Crear producto
-	**/
-
-	//EJEMPLO
-
-	public function actionCrearProducto()
-	{
-		$model = new Modelo;
-
-		if(isset($_POST['Modelo']))
-		{
-			$model->attributes = $_POST['Modelo'];
-
-			if($model->save())
-			{
-				$this->redirect('principal/inicio',array('tab'=>'tab_proveniente'));
-			}
-		}
-
-		$this->render('crea_modelo',array('model'=>$model));
-	}
-
-=======
->>>>>>> parent of 0b678b3... Revert "Revert "Testing""
 }
