@@ -2,12 +2,22 @@
 
 class ProductoController extends Controller
 {
-
+	public $layout='//layouts/principal';
+	public function actionIndex()
+	{
+		$products=new CActiveDataProvider('Producto',array(
+	   		'pagination'=>array(
+	     	'pageSize'=>4, ),
+	     	)
+	 	);
+		$this->render('/producto/producto',array('products'=>$products,)
+		);
+	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/principal';
+
 
 	/**
 	 * @return array action filters
@@ -118,20 +128,8 @@ class ProductoController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$products=new CActiveDataProvider('Producto',array(
-	   		'pagination'=>array(
-	     	'pageSize'=>4, ),
-	     	)
-	 	);
-		$this->render('productoListado',array(
-			'products'=>$products,
-		));
-	}
+
+
 	
 
 	//Consulta de producto
