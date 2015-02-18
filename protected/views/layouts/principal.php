@@ -32,7 +32,7 @@
 <div id="navigation">
    		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Ventas', 'url'=>array('/principal/inicio')),
+				array('label'=>'Ventas', 'url'=>array('/venta/index')),
 				array('label'=>'Almacen', 'url'=>array('/almacen/index')),
 				array('label'=>'Usuarios', 'url'=>array('/usuarios/index')),
 				array('label'=>'Clientes', 'url'=>array('/clientes/index')),
