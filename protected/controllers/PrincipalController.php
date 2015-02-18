@@ -81,8 +81,6 @@ class PrincipalController extends Controller
 		$this->render('inicio');
 	}
 
-
-
 	/**
 		*Crear usuario
 	**/
@@ -124,7 +122,6 @@ class PrincipalController extends Controller
 
 		$this->render('crea_usuario',array('model'=>$model));	
 	}
-<<<<<<< HEAD
 
 
 	/**
@@ -159,6 +156,4 @@ class PrincipalController extends Controller
 		$this->render('crea_modelo',array('model'=>$model));
 	}
 
-=======
->>>>>>> parent of 0b678b3... Revert "Revert "Testing""
 }
