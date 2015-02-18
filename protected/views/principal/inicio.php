@@ -1,3 +1,5 @@
+<input id="tab_actual" type="text">
+
 <div id="tabs">
 <dl class="accordion">
 <?php 
@@ -7,8 +9,18 @@ $products=new CActiveDataProvider('Producto',array(
             ),
          ));
 
+<<<<<<< HEAD
         ?>
         <!--Sección de Percepciones-->
+=======
+        <dt class="accordion__title">Ventas</dt>
+        <dd class="accordion__content">
+                <div class="inner-content">
+                <?php $this->renderPartial('tabs/ventas'); ?>
+                </div>
+        </dd>
+
+>>>>>>> parent of 0b678b3... Revert "Revert "Testing""
         <dt class="accordion__title">Usuarios</dt>
         <dd class="accordion__content">
         	<div class="inner-content">
@@ -38,3 +50,5 @@ $products=new CActiveDataProvider('Producto',array(
 		</dd>         
 </dl>
 </div>
+
+
