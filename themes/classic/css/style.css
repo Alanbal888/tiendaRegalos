@@ -37,3 +37,23 @@ body{
 .form .loginArea > .row > label{
 	margin-left: 5em;
 }	
+
+.btn-default{
+-webkit-transition : background 0.5s;
+
+}
+
+.cuadro-text
+{
+background-color: #fff;
+ width: auto;
+ height: auto;
+ margin: 0 auto 15px auto;
+ padding: 5px;
+ border: 1px solid #ccc;
+
+ -moz-border-radius: 11px;
+ -webkit-border-radius: 11px;
+ border-radius: 11px;
+ behavior: url(border-radius.htc);
+}
