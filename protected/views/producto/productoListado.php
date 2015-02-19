@@ -1,6 +1,7 @@
 <H1>Lista de Productos</H1>
+<a href="?r=producto/create"/>
+<input type="button" value="Agregar Producto"/></a>
 <?php
-
  $this->widget('zii.widgets.grid.CGridView', array(
   'dataProvider'=>$products,
   'columns'=>array(

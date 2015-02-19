@@ -10,7 +10,7 @@ class ProductoController extends Controller
 	     	'pageSize'=>4, ),
 	     	)
 	 	);
-		$this->render('/producto/producto',array('products'=>$products,)
+		$this->render('/producto/productoListado',array('products'=>$products,)
 		);
 	}
 	/**
@@ -62,9 +62,11 @@ class ProductoController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		  $products=Producto::model()->find('id_producto=:idProducto',
+                              array(':idProducto'=>$id));
+		  $this->render('productoDetalle',array(
+		      'products'=>$products,
+		   ));
 	}
 
 	/**
@@ -73,22 +75,24 @@ class ProductoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Producto;
+		$product =new Producto;
+		$model = new ActualizarProductoForm;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Producto']))
-		{
-			$model->attributes=$_POST['Producto'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_producto));
+		$form =
+			 new CForm('application.views.producto.productoActualizar',$model);
+			 if ($form->submitted('guardar')&& $form->validate()) {
+			 	$product->id_producto = $model->id_producto;
+			 	$product->nombre_p = $model->nombre_p;
+			  	$product->precio_unitario = $model->precio_unitario;
+			  	$product->unidades_existencia = $model->unidades_existencia;
+			   	$product->save();
+			   	$this->redirect(array('producto/productoListado'));
+			 }
+			 else
+			   $this->render('productoForm',array(
+			     'form'=>$form,
+			 ));
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Updates a particular model.
@@ -97,21 +101,28 @@ class ProductoController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$products=Producto::model()->find('id_producto=:idProducto',
+	                            array(':idProducto'=>$id));
+	 	$model = new ActualizarProductoForm;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Producto']))
-		{
-			$model->attributes=$_POST['Producto'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_producto));
+	
+		$model->nombre_p = $products->nombre_p;
+		$model->precio_unitario = $products->precio_unitario;
+		$model->unidades_existencia = $products->unidades_existencia;
+		$form =
+		   new CForm('application.views.producto.productoActualizar',$model);
+		if ($form->submitted('guardar')&& $form->validate()) {
+		
+			$product->nombre_p = $model->nombre_p;
+			$product->precio_unitario = $model->precio_unitario;
+			$product->unidades_existencia = $model->unidades_existencia;
+		   	$products->save();
+		   	$this->redirect(array('consulta'."&id=".$id));
 		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		 else
+		   $this->render('productoForm',array(
+		     'form'=>$form,
+		 ));
 	}
 
 	/**
@@ -121,16 +132,18 @@ class ProductoController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		 $model=Producto::model()->find('id_producto=:idProducto',
+		                             array(':idProducto'=>$id));
+		 $model->delete();
+		 $producto=Producto::model()->findAll();
+		 $this->render('productoListado',array(
+		     'products'=>$products,
+		  ));
 	}
 
 
 
-	
+
 
 	//Consulta de producto
 
